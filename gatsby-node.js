@@ -21,16 +21,17 @@ exports.createPages = ({ graphql, actions }) => {
       if (result.errors) {
         console.log("Error retrieving contentful data", result.errors)
       }
-      console.log(JSON.stringify(result))
+      console.log(JSON.stringify(result));
+      
       // Resolve the paths to our template
-      const productListTemplate = path.resolve(
-        "./src/templates/productList.js"
+      const productDetailsTemplate = path.resolve(
+        "./src/templates/productDetails.js"
       )
       // Then for each result we create a page.
       result.data.allContentfulProduct.edges.forEach(edge => {
         createPage({
           path: `/products/${edge.node.slug}/`,
-          component: slash(productListTemplate),
+          component: slash(productDetailsTemplate),
           context: {
             slug: edge.node.slug,
             id: edge.node.id,

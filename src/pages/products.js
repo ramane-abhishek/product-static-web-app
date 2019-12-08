@@ -24,6 +24,7 @@ export const query = graphql`
       edges {
         node {
           id
+          slug
           productId
           productName
           category
@@ -33,9 +34,6 @@ export const query = graphql`
               fileName
               contentType
             }
-          }
-          description {
-            description
           }
         }
       }
