@@ -21,5 +21,6 @@ module.exports = {
         accessToken,
       },
     },
+    'gatsby-plugin-postcss'
   ],
 }

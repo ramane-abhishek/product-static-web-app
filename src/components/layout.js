@@ -8,7 +8,7 @@ const ListLink = props => (
 
 export default ({ children }) => (
   <div style={{ margin: `3rem auto`, maxWidth: '80%', padding: `0 1rem` }}>
-    <header style={{ marginBottom: `1.5rem` }}>
+    <header className="">
       <Link to="/" style={{ textShadow: `none`, backgroundImage: `none` }}>
         <h3 style={{ display: `inline` }}>Material Handling</h3>
       </Link>
