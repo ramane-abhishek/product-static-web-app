@@ -21,17 +21,18 @@ class ProductTemplate extends React.Component {
     } = product
     return (
       <Layout>
+        {/* <div className="sticky top-0"> */}
         <div>
-          <h2>{productName}</h2>
+          <h2 className="text-center text-xl uppercase text-gray-800">{productName}</h2>
         </div>
-        <div class="block md:flex">
-          <div class="flex-1 text-center px-4 py-2 m-2">
+        <div className="block md:flex">
+          <div className="flex-1 text-center px-4 py-2 m-2">
             <div>
               <img src={url} className=""></img>
             </div>
           </div>
-          <div class="flex-1 text-center px-4 py-2 m-2">
-          <div>{description}</div>
+          <div className="flex-1 text-center px-4 py-2 m-2">
+          <div className="text-left sm:text-center md:text-right lg:text-justify">{description}</div>
           </div>
         </div>
       </Layout>
