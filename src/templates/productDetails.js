@@ -22,9 +22,18 @@ class ProductTemplate extends React.Component {
     return (
       <Layout>
         <div>
-          <h4>{productName}</h4>
+          <h2>{productName}</h2>
         </div>
-        <div>{description.description}</div>
+        <div class="block md:flex">
+          <div class="flex-1 text-center px-4 py-2 m-2">
+            <div>
+              <img src={url} className=""></img>
+            </div>
+          </div>
+          <div class="flex-1 text-center px-4 py-2 m-2">
+          <div>{description}</div>
+          </div>
+        </div>
       </Layout>
     )
   }
