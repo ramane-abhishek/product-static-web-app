@@ -29,8 +29,9 @@ export default ({ children }) => (
                 <div className="hidden md:flex md:items-center md:w-auto w-full order-3 md:order-2" id="menu">
                     <nav>
                         <ul className="md:flex items-center justify-between text-base text-gray-700 pt-4 md:pt-0">
-                            <li><ListLink to="/products">Products</ListLink></li>
+                            <li><ListLink to="/">Home</ListLink></li>
                             <li><ListLink to="/categories">Categories</ListLink></li>
+                            <li><ListLink to="/products">Products</ListLink></li>
                             <li><ListLink to="/about">About</ListLink></li>
                             <li><ListLink to="/contact">Contact</ListLink></li>
                         </ul>
