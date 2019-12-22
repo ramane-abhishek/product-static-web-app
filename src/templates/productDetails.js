@@ -13,7 +13,6 @@ class ProductTemplate extends React.Component {
 
     const {
       productName,
-      category,
       description: { description },
       image: {
         file: { url, fileName },
@@ -49,7 +48,6 @@ export const pageQuery = graphql`
     contentfulProduct(id: { eq: $id }) {
       productId
       productName
-      category
       description {
         description
       }

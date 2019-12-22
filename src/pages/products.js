@@ -19,24 +19,16 @@ const Products = ({ data }) => {
 }
 export default Products
 export const query = graphql`
-  query MyQuery {
-    allContentfulProduct {
-      edges {
-        node {
-          id
-          slug
-          productId
-          productName
-          category
-          image {
-            file {
-              url
-              fileName
-              contentType
-            }
-          }
-        }
+query products {
+  allContentfulProduct {
+    edges {
+      node {
+        id
+        slug
+        productId
+        productName
       }
     }
   }
+}
 `
