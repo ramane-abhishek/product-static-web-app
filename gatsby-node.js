@@ -63,7 +63,7 @@ exports.createPages = ({ graphql, actions }) => {
           // Then for each result we create a page.
           result.data.allContentfulCategory.edges.forEach(edge => {
             createPage({
-              path: `/category/${edge.node.slug}/`,
+              path: `/categories/${edge.node.slug}/`,
               component: slash(categoryProductListTemplate),
               context: {
                 slug: edge.node.slug,
