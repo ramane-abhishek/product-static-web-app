@@ -8,7 +8,7 @@ const Categories = ({ data }) => {
       <h1>{"Here's a list of all Categories!"}</h1>
       <div className="flex flex-wrap">
         {categories.map(({ node: category }) => (
-          <Link to={`/category/${category.slug}`}>
+          <Link to={`/categories/${category.slug}`}>
             <div key={category.id} className="px-2">
               <div
                 key={category.id}
