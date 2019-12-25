@@ -19,10 +19,10 @@ exports.createPages = ({ graphql, actions }) => {
   )
     .then(result => {
       if (result.errors) {
-        console.log("Error retrieving contentful data", result.errors)
+        console.log("Error retrieving contentful Product data", result.errors)
       }
-      console.log(JSON.stringify(result));
-      
+      console.log(JSON.stringify(result))
+
       // Resolve the paths to our template
       const productDetailsTemplate = path.resolve(
         "./src/templates/productDetails.js"
@@ -39,6 +39,40 @@ exports.createPages = ({ graphql, actions }) => {
         })
       })
     })
+    .then(
+      graphql(`   
+        {
+          allContentfulCategory {
+            edges {
+              node {
+                id
+                slug
+              }
+            }
+          }
+        }`)
+        .then(result=>{
+          if(result.error){
+            console.log("Error retrieving contentful Product data", result.errors)
+          }
+          console.log(JSON.stringify(result))
+          // Resolve the paths to our template
+          const categoryProductListTemplate = path.resolve(
+            "./src/templates/categoryProductList.js"
+          )
+          // Then for each result we create a page.
+          result.data.allContentfulCategory.edges.forEach(edge => {
+            createPage({
+              path: `/category/${edge.node.slug}/`,
+              component: slash(categoryProductListTemplate),
+              context: {
+                slug: edge.node.slug,
+                id: edge.node.id,
+              },
+            })
+          })
+        })
+    )
     .catch(error => {
       console.log("Error retrieving contentful data", error)
     })

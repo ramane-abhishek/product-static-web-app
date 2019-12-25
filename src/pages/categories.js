@@ -6,15 +6,24 @@ const Categories = ({ data }) => {
   return (
     <Layout>
       <h1>{"Here's a list of all Categories!"}</h1>
-      <div>
+      <div className="flex flex-wrap">
         {categories.map(({ node: category }) => (
-          <div key={category.id}>
-            <h1>{category.slug}</h1>
-            <h3>{category.id}</h3>
-          </div>
+          <Link to={`/category/${category.slug}`}>
+            <div key={category.id} className="px-2">
+              <div
+                key={category.id}
+                className="w-full bg-gray-500 px-2 py-2 mx-2 my-2"
+              >
+                <div>
+                  {category.categoryName}
+                  <h3>{category.id}</h3>
+                </div>
+              </div>
+            </div>
+          </Link>
         ))}
-        <Link to="/">Go back to the homepage</Link>
       </div>
+      <Link to="/">Go back to the homepage</Link>
     </Layout>
   )
 }
@@ -26,8 +35,9 @@ export const query = graphql`
         node {
           id
           slug
+          categoryName
         }
       }
     }
-  }  
+  }
 `
