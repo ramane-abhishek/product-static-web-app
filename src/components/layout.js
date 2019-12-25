@@ -49,8 +49,8 @@ export default ({ children }) => (
             </div>
         </nav>
       </header>
-      <div className="container w-full px-6 lg:px-16 ">
-      <div className="container">{children}</div>
+      <div className="items-center w-full px-6 lg:px-16">
+      <div>{children}</div>
     </div>
   </div>
 )
